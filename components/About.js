@@ -22,15 +22,15 @@ const About = () => {
           viewport={{ once: true }}
         >
           <div className="space-y-6">
-          <p className="text-lg leading-relaxed">
-            I am a Full-Stack Developer specializing in building scalable web ecosystems. My focus is on the intersection of performance and design—creating applications that not only look modern but handle complex data efficiently.
-          </p>
-          <p className="text-lg leading-relaxed">
-            Currently, I am focused on the Javascript stack (Next.js, Node.js) and cloud architecture. I have a track record of delivering academic and administrative platforms that serve thousands of users, as seen in my work with the EMSI network.
-          </p>
-          <p className="text-lg leading-relaxed">
-            When I'm not coding, I'm likely exploring new DevOps tools or contributing to open-source discussions.
-          </p>
+            <p className="text-lg leading-relaxed">
+              I am a Full-Stack Developer specializing in building scalable web ecosystems. My focus is on the intersection of performance and design—creating applications that not only look modern but handle complex data efficiently.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Currently, I am focused on the Javascript stack (Next.js, Node.js) and cloud architecture. I have a track record of delivering academic and administrative platforms that serve thousands of users, as seen in my work with the EMSI network.
+            </p>
+            <p className="text-lg leading-relaxed">
+              When I'm not coding, I'm likely exploring new DevOps tools or contributing to open-source discussions.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.button
                 className="btn-primary"
@@ -61,7 +61,8 @@ const About = () => {
               <Image
                 src="/aymanefakihi.JPG"
                 alt="Profile"
-                fill
+                width={384}
+                height={384}
                 className="object-cover"
                 sizes="(max-width: 768px) 320px, 384px"
               />

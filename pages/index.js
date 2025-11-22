@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Head>
-        <title>Aymane Fakihi | Full Stack Developer</title>
-        <meta name="description" content="Personal portfolio website showcasing projects and skills" />
+        <title>Aymane Fakihi | Full Stack Developer &amp; Designer</title>
+        <meta name="description" content="Aymane Fakihi, Next.js and Node.js specialist building scalable web solutions and applications." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -45,7 +45,18 @@ const projects = [
     liveUrl: "https://delegation.emsi.info",
     githubUrl: "https://github.com/aymanefakihi/e-delegation-system",
     isPrivate: true
-  }
+  },
+  {
+    id: 5, 
+    title: "Solar System Explorer",
+    category: "3D Visualisation & Data",
+    image: "/project5.png", 
+    description: "An interactive web application that renders a scaled model of the solar system. Designed to demonstrate complex physics concepts and data visualization using a pure JavaScript frontend for a highly engaging educational experience.",
+    techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "3D Librarys"],
+    liveUrl: "https://aymanefakihi.github.io/solar-system-explorar",
+    githubUrl: "https://github.com/AYMANEFAKIHI/solar-system-explorar",
+    isPrivate: false,
+  },
 ]
 
 const Projects = () => {

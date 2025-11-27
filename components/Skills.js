@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import CertificationsGrid from './CertificationsGrid'
 
 const skillCategories = {
   'Frontend': ['JavaScript', 'React', 'Next.js', 'TypeScript', 'CSS/Tailwind', 'HTML'],
@@ -196,7 +197,7 @@ const Skills = () => {
           </div>
         </motion.div>
 
-        {/* Certifications Section Update as Grid Cards */}
+        {/* Certifications Section */}
         <motion.div
           className="mt-16"
           initial={{ opacity: 0, y: 30 }}
@@ -205,22 +206,7 @@ const Skills = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-semibold text-white mb-8 text-center">Certifications</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {certifications.map(({ name, issuer, date, logo }) => (
-              <motion.div
-                key={name}
-                className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center gap-4"
-                whileHover={{ scale: 1.03 }}
-              >
-                <img src={logo} alt={`${issuer} logo`} className="w-12 h-12 object-contain rounded" />
-                <div>
-                  <h4 className="font-bold text-white mb-2">{name}</h4>
-                  <p className="text-gray-400 mb-1">{issuer}</p>
-                  <p className="text-gray-500 text-sm">{date}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <CertificationsGrid certifications={certifications} />
         </motion.div>
       </div>
     </section>

@@ -59,7 +59,7 @@ const About = () => {
           >
             <div className="w-80 h-80 md:w-96 md:h-96 relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#1abc9c]">
               <Image
-                src="/aymanefakihi.JPG"
+                src="/images/aymanefakihi.JPG"
                 alt="Profile"
                 width={384}
                 height={384}

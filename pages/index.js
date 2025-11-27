@@ -1,4 +1,4 @@
- eimport Head from 'next/head'
+import Head from 'next/head'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import EducationTimeline from '../components/EducationTimeline'

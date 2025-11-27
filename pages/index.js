@@ -1,4 +1,4 @@
-import Head from 'next/head'
+ eimport Head from 'next/head'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import EducationTimeline from '../components/EducationTimeline'
@@ -18,12 +18,24 @@ export default function Home() {
       </Head>
 
       <main>
-        <Hero />
-        <About />
-        <EducationTimeline />
-        <Projects />
-        <Skills />
-        <Contact />
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="education">
+          <EducationTimeline />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
 
       <Footer />

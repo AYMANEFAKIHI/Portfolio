@@ -21,8 +21,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -46,7 +46,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center max-w-7xl">
         {/* Logo */}
         <div className="text-2xl font-bold text-white tracking-widest">
-          AYMANE<span className="text-[#14b8a6]">.</span>
+          <span className="text-[#14b8a6]">Aymane Fakihi</span>
         </div>
 
         {/* Desktop Menu */}

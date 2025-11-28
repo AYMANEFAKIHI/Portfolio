@@ -57,6 +57,17 @@ const projects = [
     githubUrl: "https://github.com/AYMANEFAKIHI/solar-system-explorar",
     isPrivate: false,
   },
+  {
+    id: 6,
+    title: "Offline Chatbot & Rule Editor",
+    category: "Front-end Fundamentals & Logic",
+    image: "/project6.png",
+    description: "A standalone, offline-capable chatbot application featuring a custom rule editor. It demonstrates strong command of fundamental JavaScript logic, state management, and efficient JSON data handling for parsing conversational rules.",
+    techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "JSON"],
+    liveUrl: "https://aymanefakihi.github.io/chatbot-offline/",
+    githubUrl: "https://github.com/AYMANEFAKIHI/chatbot-offline",
+    isPrivate: false,
+  },
 ]
 
 const Projects = () => {

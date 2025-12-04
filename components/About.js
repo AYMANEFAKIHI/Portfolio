@@ -2,6 +2,15 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const About = () => {
+  const handleDownloadResume = () => {
+    const link = document.createElement('a')
+    link.href = '/aymane_fakihi.pdf'
+    link.download = 'aymane_fakihi.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section className="section-padding bg-gray-900" id="about">
       <div className="container-max">
@@ -36,6 +45,7 @@ const About = () => {
                 className="btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={handleDownloadResume}
               >
                 Download Resume
               </motion.button>

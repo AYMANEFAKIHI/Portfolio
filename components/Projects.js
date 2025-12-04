@@ -55,7 +55,7 @@ const projects = [
     techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "3D Librarys"],
     liveUrl: "https://aymanefakihi.github.io/solar-system-explorar",
     githubUrl: "https://github.com/AYMANEFAKIHI/solar-system-explorar",
-    isPrivate: false,
+    isPrivate: true,
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const projects = [
     techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "JSON"],
     liveUrl: "https://aymanefakihi.github.io/chatbot-offline/",
     githubUrl: "https://github.com/AYMANEFAKIHI/chatbot-offline",
-    isPrivate: false,
+    isPrivate: true,
   },
 ]
 

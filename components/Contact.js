@@ -10,6 +10,7 @@ const Contact = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
+  const [submitError, setSubmitError] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -31,16 +32,21 @@ const handleSubmit = async (e) => {
         },
         body: JSON.stringify(formData),
       })
-
+      const data = await response.json()
       if (response.ok) {
-        setSubmitMessage("Thank you for your message! I'll get back to you soon.")
+        setSubmitError(false)
+        const baseMsg = data.preview
+          ? `Message sent! Preview: ${data.preview}`
+          : "Thank you for your message! I'll get back to you soon."
+        setSubmitMessage(baseMsg)
         setFormData({ name: '', email: '', message: '' })
       } else {
-        const data = await response.json()
+        setSubmitError(true)
         setSubmitMessage(`Error: ${data.message || 'Failed to send message'}`)
       }
     } catch (error) {
-      setSubmitMessage('Error: Failed to send message')
+      setSubmitError(true)
+      setSubmitMessage(`Error: ${error.message || 'Failed to send message'}`)
     }
 
     setIsSubmitting(false)
@@ -155,7 +161,7 @@ const handleSubmit = async (e) => {
             </motion.button>
             {submitMessage && (
               <motion.p
-                className="text-green-400 text-center"
+                className={`${submitError ? 'text-red-400' : 'text-green-400'} text-center`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}

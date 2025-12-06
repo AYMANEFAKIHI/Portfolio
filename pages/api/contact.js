@@ -25,6 +25,7 @@ export default async function handler(req, res) {
         },
       });
     } else {
+      console.log('GMAIL_USER or GMAIL_PASS not set, using Ethereal');
       // Create ethereal test account (only for development/testing)
       const testAccount = await nodemailer.createTestAccount();
       usingTestAccount = true;
@@ -40,7 +41,8 @@ export default async function handler(req, res) {
     }
 
     const mailOptions = {
-      from: `${name} <${email}>`, // sender address from form
+      from: process.env.GMAIL_USER, // Use your authenticated email as sender
+      replyTo: email, // Set the "Reply-To" to the user's email
       to: process.env.GMAIL_USER || 'faymane12@gmail.com', // receiver address
       subject: `New message from ${name} via portfolio contact form`,
       text: `You have received a new message from your portfolio contact form:\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`,

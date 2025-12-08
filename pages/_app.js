@@ -9,8 +9,8 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleKeyPress = (e) => {
-      // Trigger on Ctrl + T or the tilde key (~)
-      if ((e.ctrlKey && e.key === 't') || e.key === '`') { 
+      // Trigger on Ctrl + I (Windows) or Cmd + I (Mac)
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'i') { 
         e.preventDefault();
         setIsCLIOpen(prev => !prev);
       }

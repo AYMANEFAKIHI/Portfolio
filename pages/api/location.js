@@ -12,11 +12,19 @@ export default function handler(req, res) {
       ip = req.socket?.remoteAddress || req.connection?.remoteAddress;
     }
 
+    // Normalize IP (strip IPv6 prefix if present)
+    if (ip && ip.startsWith('::ffff:')) {
+      ip = ip.replace('::ffff:', '');
+    }
+
+    console.log('Debug Location API:', { ip, env: process.env.NODE_ENV });
+
     // Handle local development (localhost) and private IP ranges
-    const isLocal = process.env.NODE_ENV === 'development' || 
+    const isLocal = process.env.NODE_ENV !== 'production' || 
                     !ip || 
                     ip === '::1' || 
                     ip === '127.0.0.1' || 
+                    ip === 'localhost' ||
                     ip.includes('127.0.0.1') ||
                     ip.startsWith('192.168.') ||
                     ip.startsWith('10.') ||

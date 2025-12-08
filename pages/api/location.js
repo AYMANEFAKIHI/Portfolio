@@ -12,8 +12,16 @@ export default function handler(req, res) {
       ip = req.socket?.remoteAddress || req.connection?.remoteAddress;
     }
 
-    // Handle local development (localhost)
-    if (!ip || ip === '::1' || ip === '127.0.0.1') {
+    // Handle local development (localhost) and private IP ranges
+    const isLocal = !ip || 
+                    ip === '::1' || 
+                    ip === '127.0.0.1' || 
+                    ip.includes('127.0.0.1') ||
+                    ip.startsWith('192.168.') ||
+                    ip.startsWith('10.') ||
+                    (ip.startsWith('172.') && parseInt(ip.split('.')[1], 10) >= 16 && parseInt(ip.split('.')[1], 10) <= 31);
+
+    if (isLocal) {
       return res.status(200).json({ 
         city: 'Rabat (Dev)', 
         country: 'Morocco' 

@@ -17,10 +17,12 @@ export default function handler(req, res) {
       ip = ip.replace('::ffff:', '');
     }
 
-    console.log('Debug Location API:', { ip, env: process.env.NODE_ENV });
+    console.log('Debug Location API:', { ip, env: process.env.NODE_ENV, host: req.headers.host });
 
     // Handle local development (localhost) and private IP ranges
-    const isLocal = process.env.NODE_ENV !== 'production' || 
+    // Check host header for localhost as a fallback
+    const isLocal = (req.headers.host && req.headers.host.includes('localhost')) ||
+                    process.env.NODE_ENV !== 'production' || 
                     !ip || 
                     ip === '::1' || 
                     ip === '127.0.0.1' || 
@@ -34,6 +36,17 @@ export default function handler(req, res) {
       return res.status(200).json({ 
         city: 'Rabat (Dev)', 
         country: 'Morocco' 
+      });
+    }
+
+    // Check for Vercel/Platform specific headers first (Most reliable on deployment)
+    const vercelCity = req.headers['x-vercel-ip-city'];
+    const vercelCountry = req.headers['x-vercel-ip-country'];
+    
+    if (vercelCity && vercelCountry) {
+      return res.status(200).json({ 
+        city: decodeURIComponent(vercelCity), 
+        country: vercelCountry 
       });
     }
 

@@ -6,6 +6,7 @@ const commands = {
   'ls projects': "Projects: EMSI Portal, EMSI Connect, StudyHub, Delegation System, Solar Explorer, Chatbot.",
   whoami: "Full Stack Engineer & Designer based in Rabat, Morocco. Focused on scalable Next.js and MERN stack applications.",
   contact: 'Opening contact form...',
+  'enable claude sonnet 4.5': 'Error: 403 Forbidden. This portfolio runs on pure Aymane intelligence (and maybe some Gemini).',
 };
 
 const CLITerminal = ({ isOpen, onClose }) => {

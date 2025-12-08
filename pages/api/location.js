@@ -13,7 +13,8 @@ export default function handler(req, res) {
     }
 
     // Handle local development (localhost) and private IP ranges
-    const isLocal = !ip || 
+    const isLocal = process.env.NODE_ENV === 'development' || 
+                    !ip || 
                     ip === '::1' || 
                     ip === '127.0.0.1' || 
                     ip.includes('127.0.0.1') ||

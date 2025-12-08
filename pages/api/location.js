@@ -1,5 +1,3 @@
-import geoip from 'geoip-lite';
-
 export default function handler(req, res) {
   try {
     // Get the IP address from the request headers
@@ -22,8 +20,14 @@ export default function handler(req, res) {
       });
     }
 
-    // Look up the location using the library
-    const geo = geoip.lookup(ip);
+    // Dynamically require geoip-lite to prevent top-level crashes and handle missing data
+    let geo = null;
+    try {
+      const geoip = require('geoip-lite');
+      geo = geoip.lookup(ip);
+    } catch (libError) {
+      console.error('GeoIP Library Error:', libError);
+    }
 
     if (geo) {
       res.status(200).json({ 

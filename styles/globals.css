@@ -154,3 +154,12 @@ img {
     @apply px-6 py-3 text-sm;
   }
 }
+
+/* Accessibility Focus Outlines */
+/* Ensures all interactive elements (buttons, links, inputs) have a visible focus state. */
+/* :focus-visible shows the outline only when navigation is done via keyboard (Tab key). */
+*:focus-visible {
+  outline: 2px solid #14b8a6; /* Your accent color */
+  outline-offset: 3px;
+  border-radius: 4px; /* Optional: adds subtle rounded corners to the focus box */
+}

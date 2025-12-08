@@ -88,7 +88,7 @@ export const projectsData = [
         techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "3D Librarys"],
         liveUrl: "https://aymanefakihi.github.io/solar-system-explorar",
         githubUrl: "https://github.com/AYMANEFAKIHI/solar-system-explorar",
-        isPrivate: false, // Updated to false based on the URL
+        isPrivate: true, // Updated to false based on the URL
     },
     {
         id: 6,
@@ -106,6 +106,6 @@ export const projectsData = [
         techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "JSON"],
         liveUrl: "https://aymanefakihi.github.io/chatbot-offline/",
         githubUrl: "https://github.com/AYMANEFAKIHI/chatbot-offline",
-        isPrivate: false, // Updated to false based on the URL
+        isPrivate: true, // Updated to false based on the URL
     },
 ];

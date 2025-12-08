@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 // You will need icons for the mobile menu. You can use Heroicons or Lucide-React.
 // For simplicity, we are using inline SVG icons here.
@@ -7,6 +8,8 @@ import { useState, useEffect } from 'react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const router = useRouter();
 
   // Handle scroll effect for background change and stickiness
   useEffect(() => {
@@ -17,6 +20,31 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle visibility based on animation state (Home page only)
+  useEffect(() => {
+    const isHomePage = router.pathname === '/';
+    
+    if (isHomePage) {
+      // Check if animation has already played
+      const hasPlayed = typeof window !== 'undefined' && sessionStorage.getItem('introPlayed');
+      
+      if (!hasPlayed) {
+        setIsVisible(false);
+        
+        const handleAnimationComplete = () => {
+          setIsVisible(true);
+        };
+        
+        window.addEventListener('hero-animation-complete', handleAnimationComplete);
+        return () => window.removeEventListener('hero-animation-complete', handleAnimationComplete);
+      } else {
+        setIsVisible(true);
+      }
+    } else {
+      setIsVisible(true);
+    }
+  }, [router.pathname]);
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
@@ -37,11 +65,11 @@ const Navbar = () => {
   return (
     <nav
       // *** THE GLASSMORHISM STYLES ARE HERE ***
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-1000 ${
         scrolled
           ? 'bg-black/50 backdrop-blur-lg border-b border-gray-700/50 py-4' // Glass style when scrolled
           : 'bg-transparent py-6' // Transparent style at the top
-      }`}
+      } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center max-w-7xl">
         {/* Logo */}

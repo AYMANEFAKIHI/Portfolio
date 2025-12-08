@@ -1,76 +1,107 @@
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
-import MatrixBackground from './MatrixBackground'
+'use client';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import MatrixBackground from './MatrixBackground';
 
-const Hero = () => {
-  const [displayText, setDisplayText] = useState('')
-  const fullText = "Hi, I'm AYMANE FAKIHI"
-  const [index, setIndex] = useState(0)
+// NOTE: This component handles the full-screen intro animation and transition.
+
+const Hero = ({ onAnimationComplete }) => {
+  const [stage, setStage] = useState(0); // 0: Matrix Only, 1: Text, 2: Buttons, 3: Transitioned
 
   useEffect(() => {
-    if (index < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[index])
-        setIndex(prev => prev + 1)
-      }, 100)
-      return () => clearTimeout(timeout)
+    // Check if animation has already played in this session
+    const hasPlayed = sessionStorage.getItem('introPlayed');
+    
+    if (hasPlayed) {
+      setStage(3);
+      document.body.classList.add('animation-finished');
+      if (onAnimationComplete) onAnimationComplete();
+      // Dispatch event immediately for Navbar
+      window.dispatchEvent(new Event('hero-animation-complete'));
+      return;
     }
-  }, [index, fullText])
 
-  const scrollToProjects = () => {
-    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })
-  }
+    // Stage 1: Text Appears (3.0s)
+    const timer1 = setTimeout(() => {
+      setStage(1);
+    }, 3000); 
+
+    // Stage 2: Buttons Appears (5.0s)
+    const timer2 = setTimeout(() => {
+      setStage(2);
+    }, 5000);
+
+    // Stage 3: Full Screen Transition (8.0s)
+    const timer3 = setTimeout(() => {
+      setStage(3);
+      // Optional: Add a class to the <body> or main layout for overall scroll control
+      document.body.classList.add('animation-finished');
+      sessionStorage.setItem('introPlayed', 'true');
+      window.dispatchEvent(new Event('hero-animation-complete'));
+      if (onAnimationComplete) onAnimationComplete();
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
+  }, [onAnimationComplete]);
+
+  // --- CSS Classes for the Transition ---
+
+  // When stage 3 is active, the Hero section must transition from full-screen to top-left.
+  const heroTransitionClasses = stage === 3 
+    ? 'h-20 py-0 opacity-0 md:opacity-100' // Target: Header height, hidden on small screens
+    : 'h-screen py-40 opacity-100'; // Full-screen initial state
+  
+  // This class controls the content of the header (which replaces the original Navbar)
+  const headerContentClasses = stage === 3 
+    ? 'translate-y-0 opacity-100' 
+    : 'translate-y-10 opacity-0'; 
 
   return (
-<section id="home" className="relative h-screen flex items-center justify-center pt-16 overflow-hidden">
-      <MatrixBackground />
-      <div className="relative z-10 text-center">
-        <motion.h1
-          className="text-6xl font-bold mb-4"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          {displayText}
-          <span className="animate-pulse">|</span>
-        </motion.h1>
-        <motion.p
-          className="text-xl text-gray-400 mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-        >
-          Full Stack Developer | Designer
-        </motion.p>
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 3, duration: 1 }}
-        >
-          <motion.button
-            className="btn-primary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={scrollToProjects}
-          >
-            View My Work
-          </motion.button>
-          <motion.button
-            className="btn-secondary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              const element = document.getElementById('contact');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Get In Touch
-          </motion.button>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
+    // 1. Full Screen Hero Container (Matrix Background is set here or in a wrapper)
+    <section 
+      id="hero"
+      className={`relative flex items-center justify-center text-center text-white 
+                  transition-all duration-1000 ease-in-out z-40 overflow-hidden
+                  ${heroTransitionClasses}`}
+    >
+        {/* Matrix Background */}
+        <div className="absolute inset-0 z-0">
+            <MatrixBackground />
+        </div>
 
-export default Hero
+        {/* 2. Main Center Content (Visible before Stage 3) */}
+        {stage < 3 && (
+            <div className="relative z-10 flex flex-col items-center transition-opacity duration-1000 ease-out">
+                {/* Name */}
+                <h1 className={`text-6xl font-extrabold tracking-tight md:text-8xl 
+                                ${stage >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+                                transition-all duration-700 delay-500`}
+                >
+                    Hi, I'm AYMANE FAKIHI
+                </h1>
+                <p className={`text-lg mt-4 text-[#14b8a6] 
+                              ${stage >= 1 ? 'opacity-100' : 'opacity-0'} 
+                              transition-opacity duration-700 delay-1000`}
+                >
+                    Full Stack Developer | Designer
+                </p>
+            </div>
+        )}
+        
+        {/* 3. Top-Left Content (Appears at Stage 3, replacing the Navbar) */}
+        {/* NOTE: We are now showing the main Navbar after animation, so we don't need this duplicate header text.
+            The Hero container itself shrinks to become the background for the Navbar. */}
+        {stage === 3 && (
+            <div className={`absolute top-0 left-0 p-6 transition-all duration-700 z-50 ${headerContentClasses} opacity-0 pointer-events-none`}>
+                {/* Hidden to avoid conflict with main Navbar */}
+            </div>
+        )}
+    </section>
+  );
+};
+
+export default Hero;

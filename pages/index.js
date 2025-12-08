@@ -1,13 +1,16 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import EducationTimeline from '../components/EducationTimeline'
-import Projects from '../components/Projects'
+import ProjectList from '../components/ProjectList'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 export default function Home() {
+  const [showContent, setShowContent] = useState(false)
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Head>
@@ -18,27 +21,28 @@ export default function Home() {
       </Head>
 
       <main>
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="education">
-          <EducationTimeline />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
+        <Hero onAnimationComplete={() => setShowContent(true)} />
+        
+        <div className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+          <section id="about">
+            <About />
+          </section>
+          <section id="education">
+            <EducationTimeline />
+          </section>
+          <ProjectList />
+          <section id="skills">
+            <Skills />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
+        </div>
       </main>
 
-      <Footer />
+      <div className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+        <Footer />
+      </div>
     </div>
   )
 }

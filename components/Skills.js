@@ -153,12 +153,11 @@ const Skills = () => {
                 {skills.map((skill, index) => (
                   <motion.span
                     key={skill}
-                    className="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm hover:bg-[#1abc9c] hover:text-black transition-colors duration-300"
+                    className="px-4 py-2 text-sm rounded-full bg-[#1e293b] text-gray-200 border border-gray-700 transition-all duration-300 transform hover:scale-105 hover:bg-[#14b8a6] hover:text-black hover:shadow-lg hover:shadow-[#14b8a6]/30"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: (categoryIndex * 0.2) + (index * 0.05), duration: 0.5 }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.1 }}
                   >
                     {skill}
                   </motion.span>
@@ -184,12 +183,11 @@ const Skills = () => {
             ].map((tech, index) => (
               <motion.span
                 key={tech}
-                className="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm hover:bg-gray-700 transition-colors duration-300"
+                className="px-4 py-2 text-sm rounded-full bg-[#1e293b] text-gray-200 border border-gray-700 transition-all duration-300 transform hover:scale-105 hover:bg-[#14b8a6] hover:text-black hover:shadow-lg hover:shadow-[#14b8a6]/30"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05, duration: 0.5 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.1, backgroundColor: '#1abc9c', color: 'white' }}
               >
                 {tech}
               </motion.span>

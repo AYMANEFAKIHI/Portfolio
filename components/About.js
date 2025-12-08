@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import LocationGreeting from './LocationGreeting'
 
 const About = () => {
   const handleDownloadResume = () => {
@@ -41,6 +42,7 @@ const About = () => {
             <p className="text-lg leading-relaxed">
               When I'm not coding, I'm likely exploring new DevOps tools or contributing to open-source discussions.
             </p>
+            <LocationGreeting />
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.button
                 className="btn-primary"

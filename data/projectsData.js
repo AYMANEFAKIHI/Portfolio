@@ -130,5 +130,28 @@ export const projectsData = [
         liveUrl: "https://presentation-pied-nine.vercel.app/", // The link you provided
         githubUrl: "https://github.com/AYMANEFAKIHI/presentation", // Assume this is the repository structure
         isPrivate: true,
+    },
+    {
+        id: 8,
+        title: "The Arduino Student Lab",
+        category: "Technical Education / IoT",
+        image: "/project8.png",
+        summary: "An educational platform providing clear, project-based tutorials for mastering Arduino programming, focusing on electronics and physical computing.",
+        fullDescription: `
+**The Arduino Student Lab** was developed to bridge the gap between theoretical electrical/physical concepts and practical application. It serves as a comprehensive educational resource for students interested in hardware programming and the Internet of Things (IoT).
+
+**Problem & Goal:** Existing Arduino tutorials are often fragmented or overly technical. The goal was to create a single, clear, highly visual learning path using a project-based approach to master fundamental concepts like digital and analog I/O, PWM, and sensor integration.
+
+**Solution & Implementation:**
+* **Architecture:** Developed using pure **HTML5, CSS3, and JavaScript** (Vanilla JS) for maximum compatibility and lightweight performance. This choice demonstrates strong foundational web skills alongside specialized domain knowledge.
+* **Core Feature:** Features detailed, step-by-step tutorials with embedded circuit diagrams and runnable code snippets, making complex concepts accessible.
+* **Focus:** The project highlights proficiency in technical documentation and creating engaging educational content.
+
+**Results:** Successfully provides a reliable starting point for physical computing, demonstrating the ability to translate technical knowledge into clear, structured, and user-friendly documentation.
+        `,
+        techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "Technical Writing"],
+        liveUrl: "https://aymanefakihi.github.io/ARDUINO/",
+        githubUrl: "https://github.com/AYMANEFAKIHI/ARDUINO",
+        isPrivate: false,
     }
 ];

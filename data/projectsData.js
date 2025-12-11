@@ -108,4 +108,27 @@ export const projectsData = [
         githubUrl: "https://github.com/AYMANEFAKIHI/chatbot-offline",
         isPrivate: true, // Updated to false based on the URL
     },
+    {
+        id: 7,
+        title: "WebSlide Generator",
+        category: "Declarative UI & Export Tooling",
+        image: "/project7.png", // Ensure you have this screenshot in your public folder!
+        summary: "A developer-centric tool for creating responsive HTML/CSS presentations from declarative templates, supporting PDF and ZIP export.",
+        fullDescription: `
+**WebSlide Generator** was conceived in direct response to the surge of AI-driven presentation tools. While these tools offer undeniable speed, they often compromise on design control, thematic coherence, and the portability of the final asset.
+
+**Problem & Goal:** To provide a robust, developer-centric solution: a declarative template system built on Next.js. The architecture guarantees a **"high-fidelity, dependency-free HTML/CSS export"**, giving the user aesthetic mastery and technical longevity that automated tools cannot match.
+
+**Solution & Implementation:**
+* **Architecture:** Utilizes a **Next.js** framework with **TypeScript** for type-safe rendering of complex, nested slide structures.
+* **Core Feature:** Implements a custom export mechanism to generate clean, self-contained HTML/CSS and package it as a ZIP file.
+* **Output Control:** Designed the system to ensure the generated code is dependency-free, promoting portability and longevity.
+
+**Results:** Successfully created a professional-grade presentation tool that is highly valued by developers and designers who require full control over their final output without needing heavy third-party software.
+    `,
+        techStack: ["Next.js", "TypeScript", "HTML/CSS Generation", "Export Tooling"],
+        liveUrl: "https://presentation-pied-nine.vercel.app/", // The link you provided
+        githubUrl: "https://github.com/AYMANEFAKIHI/presentation", // Assume this is the repository structure
+        isPrivate: true,
+    }
 ];

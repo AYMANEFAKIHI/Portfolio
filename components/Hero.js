@@ -21,17 +21,17 @@ const Hero = ({ onAnimationComplete }) => {
       return;
     }
 
-    // Stage 1: Text Appears (3.0s)
+    // Stage 1: Text Appears (2.0s)
     const timer1 = setTimeout(() => {
       setStage(1);
     }, 3000); 
 
-    // Stage 2: Buttons Appears (5.0s)
+    // Stage 2: Buttons Appears (4.0s)
     const timer2 = setTimeout(() => {
       setStage(2);
-    }, 5000);
+    }, 4000);
 
-    // Stage 3: Full Screen Transition (8.0s)
+    // Stage 3: Full Screen Transition (7.0s)
     const timer3 = setTimeout(() => {
       setStage(3);
       // Optional: Add a class to the <body> or main layout for overall scroll control
@@ -39,7 +39,7 @@ const Hero = ({ onAnimationComplete }) => {
       sessionStorage.setItem('introPlayed', 'true');
       window.dispatchEvent(new Event('hero-animation-complete'));
       if (onAnimationComplete) onAnimationComplete();
-    }, 8000);
+    }, 6000);
 
     return () => {
       clearTimeout(timer1);

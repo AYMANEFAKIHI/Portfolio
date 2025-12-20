@@ -154,4 +154,29 @@ export const projectsData = [
         githubUrl: "https://github.com/AYMANEFAKIHI/ARDUINO",
         isPrivate: false,
     }
+
+    {
+        id: 9,
+        title: "ExamBuilder",
+        category: "AI-Powered EdTech",
+        image: "/project9.jpg", // Use the uploaded 'Capture d'écran 2025-12-20 091909.jpg'
+        summary: "An intelligent platform powered by Google Gemini AI that allows educators to generate professional, formatted exams in seconds with instant PDF export.",
+        fullDescription: `
+**ExamBuilder** (L'Examen Parfait) is an AI-driven solution designed to streamline the workflow for demanding educators. By leveraging large language models, it removes the friction of manual exam drafting and formatting.
+
+**Problem & Goal:** Teachers spend significant time creating balanced exam questions and managing layout. The goal was to build a tool that generates high-quality content instantly while ensuring a clean, printable output.
+
+**Solution & Implementation:**
+* **AI Integration:** Integrated **Google Gemini API** to generate contextually relevant questions and structures based on teacher input.
+* **Performance & Security:** Built with a focus on speed and data security, ensuring that teacher-generated content is private and accessible only to them.
+* **Export Tooling:** Implemented an instant **PDF Export** engine that converts AI-generated content into a professional, ready-to-print classroom document.
+* **Localization:** Fully localized in **French**, demonstrating the ability to build software for diverse global markets.
+
+**Results:** A 100% free, secure, and highly efficient tool that can save teachers hours of preparation time per week.
+        `,
+        techStack: ["Next.js", "Google Gemini AI", "Tailwind CSS", "TypeScript", "PDF Generation"],
+        liveUrl: "https://exam-builder-frontend.vercel.app/",
+        githubUrl: "https://github.com/AYMANEFAKIHI/Exam-Builder",
+        isPrivate: true,
+    }
 ];

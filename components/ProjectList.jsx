@@ -27,7 +27,8 @@ const ProjectList = () => {
                         
                         return (
                             <motion.div 
-                                key={project.id} 
+                                key={project.id}
+                                id={`project-${project.id}`}
                                 className={`flex flex-col md:flex-row items-center gap-12`}
                                 initial={{ opacity: 0, y: 100 }}
                                 whileInView={{ opacity: 1, y: 0 }}

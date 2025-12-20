@@ -2,8 +2,9 @@
 import { useState, useEffect, useRef } from 'react';
 
 const commands = {
-  help: 'Available commands: whoami, ls projects, contact, clear, exit',
-  'ls projects': "Projects: EMSI Portal, EMSI Connect, StudyHub, Delegation System, Solar Explorer, Chatbot.",
+  help: 'Available commands: whoami, ls projects, exambuilder, contact, clear, exit',
+  'ls projects': "Projects: ExamBuilder (New!), WebSlide Generator, EMSI Suite, Arduino Lab, Solar Explorer...",
+  exambuilder: "Opening ExamBuilder: An AI-powered platform for teachers to generate exams using Google Gemini.",
   whoami: "Full Stack Engineer & Designer based in Rabat, Morocco. Focused on scalable Next.js and MERN stack applications.",
   contact: 'Opening contact form...',
   'enable claude sonnet 4.5': 'Error: 403 Forbidden. This portfolio runs on pure Aymane intelligence (and maybe some Gemini).',
@@ -24,23 +25,24 @@ const CLITerminal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const executeCommand = (command) => {
-    const output = commands[command.toLowerCase()];
-    
+    const cmd = command.toLowerCase();
+    const output = commands[cmd];
     setHistory(prev => [...prev, { type: 'input', content: command }]);
-    
     if (output) {
-      if (command.toLowerCase() === 'contact') {
-        // Scroll to contact section and close terminal
+      if (cmd === 'contact') {
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
         onClose();
         setHistory(prev => [...prev, { type: 'output', content: output }]);
-      } else if (command.toLowerCase() === 'exit') {
+      } else if (cmd === 'exit') {
         onClose();
         return;
+      } else if (cmd === 'exambuilder') {
+        document.getElementById('project-9')?.scrollIntoView({ behavior: 'smooth' });
+        setHistory(prev => [...prev, { type: 'output', content: output }]);
       } else {
         setHistory(prev => [...prev, { type: 'output', content: output }]);
       }
-    } else if (command.toLowerCase() === 'clear') {
+    } else if (cmd === 'clear') {
       setHistory([]);
     } else {
       setHistory(prev => [...prev, { type: 'error', content: `Error: Command not found: ${command}. Type "help".` }]);

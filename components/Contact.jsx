@@ -49,28 +49,24 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    // --- REPLACE THIS WITH YOUR ACTUAL FORM SUBMISSION LOGIC ---
-    // Example using a simple API endpoint (like Formspree or your own backend)
     try {
-        // const response = await fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(formData),
-        // });
-        
-        // --- SIMULATE SUCCESS FOR DEMO ---
-        await new Promise(resolve => setTimeout(resolve, 1500)); 
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
 
-        // if (response.ok) { // Check if the API call was successful
+        if (response.ok) {
             setIsSuccess(true);
             setFormData({ name: '', email: '', message: '' }); // Clear form
-        // } else {
-            // alert('Failed to send message. Please try again.');
-        // }
+        } else {
+            const data = await response.json();
+            alert(data.message || 'Failed to send message. Please try again.');
+        }
 
     } catch (error) {
-      // console.error('Submission error:', error);
-      // alert('An unexpected error occurred.');
+      console.error('Submission error:', error);
+      alert('An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

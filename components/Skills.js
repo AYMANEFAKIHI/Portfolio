@@ -21,6 +21,18 @@ const skills = [
 
 const certifications = [
   {
+    name: "Software Engineering: Software Design and Project Management", 
+    issuer: "The Hong Kong University of Science and Technology",
+    date: "Mar. 2026", 
+    logo: "/conception.png", 
+  },
+  {
+    name: "Using Python to Access Web Data", 
+    issuer: "University of Michigan",
+    date: "Mar. 2026", 
+    logo: "/university_of_michigan_logo.webp", 
+  },
+  {
     name: "Introduction à la programmation orientée objet (en C++)",
     issuer: "École polytechnique fédérale de Lausanne, EPFL",
     date: "Nov. 2025",

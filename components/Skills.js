@@ -29,7 +29,7 @@ const certifications = [
   {
     name: "Using Python to Access Web Data", 
     issuer: "University of Michigan",
-    date: "Mar. 2026", 
+    date: "Mar. 2026 ", 
     logo: "/university_of_michigan_logo.webp", 
   },
   {

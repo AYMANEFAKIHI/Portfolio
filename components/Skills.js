@@ -25,154 +25,154 @@ const certifications = [
     issuer: "Oracle University",
     date: "Mar. 2026",
     logo: "/oracle.png",
-    file: "Oracle_Cloud_Infrastructure_2025_Certified_Foundations_Associate.pdf"
+    file: "ORACLE.pdf"
   },
   {
     name: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
     issuer: "Oracle University",
     date: "Mar. 2026",
     logo: "/oracle.png",
-    file: "Oracle_Cloud_Infrastructure_2025_Certified_AI_Foundations_Associate.pdf"
+    file: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate.pdf"
   },
   {
     name: "Oracle Data Platform 2025 Certified Foundations Associate",
     issuer: "Oracle University",
     date: "Mar. 2026",
     logo: "/oracle.png",
-    file: "Oracle_Data_Platform_2025_Certified_Foundations_Associate.pdf"
+    file: "Oracle Data Platform 2025 Certified Foundations Associate.pdf"
   },
   {
     name: "Software Engineering: Software Design and Project Management", 
     issuer: "The Hong Kong University of Science and Technology",
     date: "Mar. 2026", 
     logo: "/conception.png",
-    file: "Software_Engineering_Software_Design_and_Project_Management.pdf"
+    file: "Software Engineering Software Design and Project.pdf"
   },
   {
     name: "Using Python to Access Web Data", 
     issuer: "University of Michigan",
     date: "Mar. 2026 ", 
     logo: "/university_of_michigan_logo.webp",
-    file: "Using_Python_to_Access_Web_Data.pdf"
+    file: "Using Python to Access Web Data.pdf"
   },
   {
     name: "Introduction à la programmation orientée objet (en C++)",
     issuer: "École polytechnique fédérale de Lausanne, EPFL",
     date: "Nov. 2025",
     logo: "/EPFL.jpg",
-    file: "Introduction_a_la_programmation_oriente_objet_en_C++.pdf"
+    file: "Coursera C++.pdf"
   },
   {
     name: "JavaScript, jQuery et JSON",
     issuer: "University of Michigan",
     date: "Nov. 2025",
     logo: "/university_of_michigan_logo.webp",
-    file: "JavaScript_jQuery_et_JSON.pdf"
+    file: "Coursera JavaScript, jQuery, and JSON.pdf"
   },
   {
     name: "Introduction to Career Skills in Data Analytics",
     issuer: "LinkedIn",
     date: "Jul. 2025",
     logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-    file: "Introduction_to_Career_Skills_in_Data_Analytics.pdf"
+    file: "Introduction to Career Skills in Data Analytics.pdf"
   },
   {
     name: "Career Preparation Workshop",
     issuer: "Cisco",
     date: "Apr. 2025",
     logo: "/Cisco.jpg",
-    file: "Career_Preparation_Workshop.pdf"
+    file: "Career Preparation Workshop.pdf"
   },
   {
     name: "English for IT 2",
     issuer: "Cisco",
     date: "Apr. 2025",
     logo: "/Cisco.jpg",
-    file: "English_for_IT_2.pdf"
+    file: "English for IT 2.pdf"
   },
   {
     name: "CSS Essentials",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "CSS_Essentials.pdf"
+    file: "CSS Essentials.pdf"
   },
   {
     name: "English for IT 1",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "English_for_IT_1.pdf"
+    file: "English for IT 1.pdf"
   },
   {
     name: "Ethical Hacker",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "Ethical_Hacker.pdf"
+    file: "Ethical Hacker.pdf"
   },
   {
     name: "HTML Essentials",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "HTML_Essentials.pdf"
+    file: "HTML Essentials.pdf"
   },
   {
     name: "JavaScript Essentials 1",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "JavaScript_Essentials_1.pdf"
+    file: "JavaScript Essentials 1.pdf"
   },
   {
     name: "JavaScript Essentials 2",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "JavaScript_Essentials_2.pdf"
+    file: "JavaScript Essentials 2.pdf"
   },
   {
     name: "Networking Basics",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "Networking_Basics.pdf"
+    file: "Networking Basics.pdf"
   },
   {
     name: "Python Essentials 1",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "Python_Essentials_1.pdf"
+    file: "Python 1.pdf"
   },
   {
     name: "Python Essentials 2",
     issuer: "Cisco",
     date: "Mar. 2025",
     logo: "/Cisco.jpg",
-    file: "Python_Essentials_2.pdf"
+    file: "Python 2.pdf"
   },
   {
     name: "Introduction to Modern AI",
     issuer: "Cisco",
     date: "Feb. 2025",
     logo: "/Cisco.jpg",
-    file: "Introduction_to_Modern_AI.pdf"
+    file: "Introduction to Modern AI.pdf"
   },
   {
     name: "Developing Your Emotional Intelligence",
     issuer: "LinkedIn",
     date: "",
     logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-    file: "Developing_Your_Emotional_Intelligence.pdf"
+    file: "Developing Your Emotional Intelligence.pdf"
   },
   {
     name: "What Is Generative AI?",
     issuer: "LinkedIn",
     date: "",
     logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-    file: "What_Is_Generative_AI.pdf"
+    file: "What Is Generative AI.pdf"
   },
 ]
 

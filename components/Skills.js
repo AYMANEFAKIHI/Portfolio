@@ -21,6 +21,24 @@ const skills = [
 
 const certifications = [
   {
+    name: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+    issuer: "Oracle University",
+    date: "Mar. 2026",
+    logo: "/oracle.png",
+  },
+  {
+    name: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+    issuer: "Oracle University",
+    date: "Mar. 2026",
+    logo: "/oracle.png",
+  },
+  {
+    name: "Oracle Data Platform 2025 Certified Foundations Associate",
+    issuer: "Oracle University",
+    date: "Mar. 2026",
+    logo: "/oracle.png",
+  },
+  {
     name: "Software Engineering: Software Design and Project Management", 
     issuer: "The Hong Kong University of Science and Technology",
     date: "Mar. 2026", 

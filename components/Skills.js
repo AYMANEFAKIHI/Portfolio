@@ -21,6 +21,12 @@ const skills = [
 
 const certifications = [
   {
+    name: "Data Science Essentials with Python",
+    issuer: "Cisco Networking Academy",
+    date: "Mar. 2026",
+    logo: "/cisco_logo.png", 
+    file: "Data Science Essentials with Python.pdf"},
+  {
     name: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
     issuer: "Oracle University",
     date: "Mar. 2026",

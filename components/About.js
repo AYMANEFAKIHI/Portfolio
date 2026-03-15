@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import LocationGreeting from './LocationGreeting'
+import { About3D } from './About3D'
 
 const About = () => {
   const handleDownloadResume = () => {
@@ -70,22 +70,7 @@ const About = () => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-80 h-80 md:w-96 md:h-96 relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#1abc9c]">
-              <Image
-                src="/images/aymanefakihi.JPG"
-                alt="Profile"
-                width={384}
-                height={384}
-                className="object-cover"
-                sizes="(max-width: 768px) 320px, 384px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1abc9c]/20 to-transparent"></div>
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#3498db] rounded-full flex items-center justify-center shadow-lg animate-glow">
-              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
+            <About3D />
           </motion.div>
         </motion.div>
       </div>

@@ -57,7 +57,6 @@ const CLITerminal = ({ isOpen, onClose }) => {
   };
 
   return (
-    // Fixed container with z-index for visibility
     <div className="fixed inset-0 z-[60] bg-black bg-opacity-80 flex items-center justify-center p-4">
       <div 
         className="w-full max-w-4xl h-3/4 bg-[#1e293b] text-white font-mono rounded-lg shadow-2xl flex flex-col border border-[#14b8a6]"

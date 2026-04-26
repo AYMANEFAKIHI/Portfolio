@@ -1,2 +1,0 @@
-- [x] Update EducationTimeline.jsx with fade-in on scroll animation using react-intersection-observer
-- [x] Run development server to test the changes

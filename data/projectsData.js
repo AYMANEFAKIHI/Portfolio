@@ -88,7 +88,7 @@ export const projectsData = [
         techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "3D Librarys"],
         liveUrl: "https://aymanefakihi.github.io/solar-system-explorar",
         githubUrl: "https://github.com/AYMANEFAKIHI/solar-system-explorar",
-        isPrivate: true, // Updated to false based on the URL
+        isPrivate: false,
     },
     {
         id: 6,
@@ -106,7 +106,7 @@ export const projectsData = [
         techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "JSON"],
         liveUrl: "https://aymanefakihi.github.io/chatbot-offline/",
         githubUrl: "https://github.com/AYMANEFAKIHI/chatbot-offline",
-        isPrivate: true, // Updated to false based on the URL
+        isPrivate: false,
     },
     {
         id: 7,
@@ -129,7 +129,7 @@ export const projectsData = [
         techStack: ["Next.js", "TypeScript", "HTML/CSS Generation", "Export Tooling"],
         liveUrl: "https://presentation-pied-nine.vercel.app/", // The link you provided
         githubUrl: "https://github.com/AYMANEFAKIHI/presentation", // Assume this is the repository structure
-        isPrivate: true,
+        isPrivate: false,
     },
     {
         id: 8,
@@ -152,7 +152,7 @@ export const projectsData = [
         techStack: ["HTML5", "CSS3", "Vanilla JavaScript", "Technical Writing"],
         liveUrl: "https://aymanefakihi.github.io/ARDUINO/",
         githubUrl: "https://github.com/AYMANEFAKIHI/ARDUINO",
-	    isPrivate: true,
+	    isPrivate: false,
     },
 
     {
@@ -177,6 +177,6 @@ export const projectsData = [
         techStack: ["Next.js", "Google Gemini AI", "Tailwind CSS", "TypeScript", "PDF Generation"],
         liveUrl: "https://exam-builder-frontend.vercel.app/",
         githubUrl: "https://github.com/AYMANEFAKIHI/Exam-Builder",
-        isPrivate: true,
+        isPrivate: false,
     }
 ];

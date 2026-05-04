@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import LocationGreeting from './LocationGreeting'
 import { About3D } from './About3D'
+import { useLanguage } from '../context/LanguageContext'
 
 const About = () => {
+  const { t } = useLanguage()
+
   const handleDownloadResume = () => {
     const link = document.createElement('a')
     link.href = '/aymane_fakihi.pdf'
@@ -13,7 +16,7 @@ const About = () => {
   }
 
   return (
-    <section className="section-padding bg-gray-900" id="about" aria-label="About me">
+    <section className="section-padding" id="about" style={{ background: 'var(--bg-secondary)' }} aria-label="About me">
       <div className="container-max">
         <motion.h2
           className="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text"
@@ -22,7 +25,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          About Me
+          {t('about_title')}
         </motion.h2>
 
         <motion.div
@@ -33,21 +36,28 @@ const About = () => {
           viewport={{ once: true }}
         >
           <div className="space-y-6">
-            <p className="text-lg leading-relaxed text-gray-300">
-              I'm a Full-Stack Developer specializing in building scalable web ecosystems. My focus is on the intersection of performance and design — creating applications that not only look modern but handle complex data efficiently.
+            <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {t('about_p1')}
             </p>
-            <p className="text-lg leading-relaxed text-gray-300">
-              Currently pursuing my Engineering degree at <strong className="text-white">EMSI Rabat</strong>, I have shipped platforms serving <strong className="text-[#14b8a6]">5,000+ students and faculty</strong> across the EMSI network — from a central portal aggregating real-time academic data to a full MERN-stack social networking platform.
+            <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {t('about_p2').split('EMSI Rabat').map((part, i, arr) =>
+                i < arr.length - 1
+                  ? <span key={i}>{part}<strong style={{ color: 'var(--text-primary)' }}>EMSI Rabat</strong></span>
+                  : <span key={i}>{part}</span>
+              )}
             </p>
-            <p className="text-lg leading-relaxed text-gray-300">
-              My stack of choice is the JavaScript ecosystem (Next.js, Node.js) combined with cloud architecture on AWS. When I'm not coding, I'm exploring DevOps tooling or working on AI-integrated applications.
+            <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {t('about_p3')}
             </p>
 
             {/* Available badge */}
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-[#14b8a6]/10 border border-[#14b8a6]/30">
+            <div
+              className="flex items-center gap-3 p-4 rounded-xl border"
+              style={{ background: 'rgba(20,184,166,0.08)', borderColor: 'rgba(20,184,166,0.25)' }}
+            >
               <span className="w-3 h-3 rounded-full bg-[#14b8a6] animate-pulse flex-shrink-0" />
-              <p className="text-sm text-[#14b8a6] font-medium">
-                Currently available for freelance projects &amp; internship opportunities
+              <p className="text-sm font-medium" style={{ color: 'var(--accent)' }}>
+                {t('about_available')}
               </p>
             </div>
 
@@ -59,18 +69,18 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleDownloadResume}
-                aria-label="Download Aymane Fakihi resume PDF"
+                aria-label="Download resume PDF"
               >
-                Download Resume
+                {t('about_download')}
               </motion.button>
               <motion.button
                 className="btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 aria-label="Scroll to contact section"
               >
-                Contact Me
+                {t('about_contact')}
               </motion.button>
             </div>
           </div>

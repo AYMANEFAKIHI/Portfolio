@@ -15,7 +15,11 @@ const CertificationsGrid = ({ certifications }) => {
         <motion.button
           key={index}
           type="button"
-          className="text-left p-5 bg-[#1e293b] rounded-xl border border-gray-700/60 hover:border-[#14b8a6] transition-all duration-300 cursor-pointer group w-full focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
+          className="text-left p-5 rounded-xl border transition-all duration-300 cursor-pointer group w-full focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
+          style={{
+            background: 'var(--bg-card)',
+            borderColor: 'var(--border-color)',
+          }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: Math.min(index * 0.06, 0.5), duration: 0.5 }}
@@ -24,26 +28,40 @@ const CertificationsGrid = ({ certifications }) => {
           whileTap={{ scale: 0.98 }}
           onClick={() => handleCertificateClick(cert)}
           aria-label={`View ${cert.name} certificate from ${cert.issuer}`}
+          onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+          onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border-color)'}
         >
           <div className="flex items-start gap-3">
             {/* Badge icon */}
-            <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#14b8a6]/10 border border-[#14b8a6]/20 flex items-center justify-center group-hover:bg-[#14b8a6]/20 transition-colors">
-              <svg className="w-4 h-4 text-[#14b8a6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors"
+              style={{ background: 'rgba(20,184,166,0.12)', border: '1px solid rgba(20,184,166,0.25)' }}>
+              <svg className="w-4 h-4" style={{ color: 'var(--accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-9.618 9.043A11.954 11.954 0 0012 21c3.81 0 7.412-1.295 10.382-3.607a11.955 11.955 0 01-5.764-11.453z" />
               </svg>
             </div>
+
             <div className="min-w-0 flex-1">
-              <h3 className="text-sm font-semibold text-white leading-snug group-hover:text-[#14b8a6] transition-colors duration-200">
+              {/* ✅ FIX: was text-white (invisible in light mode) → now uses CSS var */}
+              <h3 className="text-sm font-semibold leading-snug transition-colors duration-200"
+                style={{ color: 'var(--text-primary)' }}>
                 {cert.name}
               </h3>
-              <p className="text-xs text-gray-400 mt-1">{cert.issuer}</p>
+              {/* ✅ FIX: was text-gray-400 (barely visible in light mode) → now uses CSS var */}
+              <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
+                {cert.issuer}
+              </p>
+              {/* ✅ FIX: was text-gray-600 → now uses CSS var */}
               {cert.date && (
-                <p className="text-xs text-gray-600 mt-0.5">{cert.date}</p>
+                <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                  {cert.date}
+                </p>
               )}
             </div>
-            {/* External link indicator */}
+
+            {/* External link arrow — also theme-aware */}
             <svg
-              className="w-3.5 h-3.5 text-gray-600 group-hover:text-[#14b8a6] flex-shrink-0 mt-0.5 transition-colors"
+              className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 transition-colors"
+              style={{ color: 'var(--text-muted)' }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

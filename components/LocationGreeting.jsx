@@ -1,8 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const LocationGreeting = () => {
   const [location, setLocation] = useState(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const fetchLocation = async () => {
@@ -17,11 +19,15 @@ const LocationGreeting = () => {
     fetchLocation();
   }, []);
 
-  if (!location) return null; // Don't show anything while loading
+  if (!location) return null;
 
   return (
-    <p className="text-md font-medium text-gray-500 mt-2">
-      👋 **Hello from Morocco!** I see you're connecting from <span className="text-[#14b8a6]">{location.city}</span>, <span className="text-[#14b8a6]">{location.country}</span>. Let's build something great together.
+    <p className="text-md font-medium mt-2" style={{ color: 'var(--text-muted)' }}>
+      👋 <strong style={{ color: 'var(--text-secondary)' }}>{t('location_greeting')}</strong>{' '}
+      {t('location_connecting')}{' '}
+      <span style={{ color: 'var(--accent)' }}>{location.city}</span>,{' '}
+      <span style={{ color: 'var(--accent)' }}>{location.country}</span>.{' '}
+      {t('location_cta')}
     </p>
   );
 };

@@ -59,7 +59,7 @@ const CLITerminal = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-[60] bg-black bg-opacity-80 flex items-center justify-center p-4">
       <div 
-        className="w-full max-w-4xl h-3/4 bg-[#1e293b] text-white font-mono rounded-lg shadow-2xl flex flex-col border border-[#14b8a6]"
+        id="cli-terminal" className="w-full max-w-4xl h-3/4 bg-[#0d1117] text-white font-mono rounded-lg shadow-2xl flex flex-col border border-[#14b8a6]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Title Bar */}

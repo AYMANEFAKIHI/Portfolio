@@ -195,7 +195,7 @@ export const projectsData = [
 **Résultats:** Une plateforme gratuite qui donne aux étudiants des informations pilotées par les données et des documents de candidature professionnels, augmentant significativement leurs chances d'obtenir un PFA ou un stage.`
         },
         techStack: ["React", "Vite", "Tailwind", "Supabase", "Groq AI", "Node.js"],
-        liveUrl: "https://intern-iq.vercel.app/",
+        liveUrl: "https://resume-cyan-pi.vercel.app/",
         githubUrl: "https://github.com/AYMANEFAKIHI/resume",
         isPrivate: false,
     }

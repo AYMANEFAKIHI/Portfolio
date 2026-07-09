@@ -1,5 +1,22 @@
 import { motion } from 'framer-motion'
 
+const issuerLogoMap = {
+  'aws': '/aws_logo.png',
+  'aws training & certification': '/aws_logo.png',
+  'oracle university': '/oracle.png',
+  'cisco networking academy': '/Cisco.jpg',
+  'cisco': '/Cisco.jpg',
+  'epfl': '/EPFL.jpg',
+  'university of michigan': '/university_of_michigan_logo.webp',
+}
+
+const getCertificateLogo = (cert) => {
+  if (cert.logo) return cert.logo
+
+  const normalizedIssuer = cert.issuer?.toLowerCase().trim() || ''
+  return issuerLogoMap[normalizedIssuer] || null
+}
+
 const CertificationsGrid = ({ certifications }) => {
   const handleCertificateClick = (cert) => {
     if (cert.isExternal) {
@@ -11,7 +28,10 @@ const CertificationsGrid = ({ certifications }) => {
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {certifications.map((cert, index) => (
+      {certifications.map((cert, index) => {
+        const logoSrc = getCertificateLogo(cert)
+
+        return (
         <motion.button
           key={index}
           type="button"
@@ -32,13 +52,21 @@ const CertificationsGrid = ({ certifications }) => {
           onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border-color)'}
         >
           <div className="flex items-start gap-3">
-            {/* Badge icon */}
-            <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors"
-              style={{ background: 'rgba(20,184,166,0.12)', border: '1px solid rgba(20,184,166,0.25)' }}>
-              <svg className="w-4 h-4" style={{ color: 'var(--accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-9.618 9.043A11.954 11.954 0 0012 21c3.81 0 7.412-1.295 10.382-3.607a11.955 11.955 0 01-5.764-11.453z" />
-              </svg>
-            </div>
+            {logoSrc ? (
+              <img
+                src={logoSrc}
+                alt=""
+                className="flex-shrink-0 w-8 h-8 rounded-lg object-contain border"
+                style={{ borderColor: 'var(--border-color)' }}
+              />
+            ) : (
+              <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors"
+                style={{ background: 'rgba(20,184,166,0.12)', border: '1px solid rgba(20,184,166,0.25)' }}>
+                <svg className="w-4 h-4" style={{ color: 'var(--accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-9.618 9.043A11.954 11.954 0 0012 21c3.81 0 7.412-1.295 10.382-3.607a11.955 11.955 0 01-5.764-11.453z" />
+                </svg>
+              </div>
+            )}
 
             <div className="min-w-0 flex-1">
               {/* ✅ FIX: was text-white (invisible in light mode) → now uses CSS var */}
@@ -71,7 +99,8 @@ const CertificationsGrid = ({ certifications }) => {
             </svg>
           </div>
         </motion.button>
-      ))}
+        )
+      })}
     </div>
   );
 };

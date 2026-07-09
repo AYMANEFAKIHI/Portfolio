@@ -26,6 +26,7 @@ const certifications = [
   { name: "CS50x: Introduction to Computer Science", issuer: "Harvard University", date: "April 2026", file: "https://cs50.harvard.edu/certificates/a4e1a9b0-9489-415e-a8a2-ffddafc35320", isExternal: true, tier: "featured" },
   { name: "Introduction to Software Development", issuer: "Coursera — Amazon", date: "April 2026", file: "https://coursera.org/verify/QLYP7R491K8T", isExternal: true, tier: "featured" },
   { name: "AWS AI Practitioner Challenge", issuer: "Udacity", date: "March 2026", file: "https://www.udacity.com/certificate/e/6e465114-2c35-11f1-b9ee", isExternal: true, tier: "featured" },
+  { name: "AWS Cloud Practitioner Essentials (Français)", issuer: "AWS Training & Certification", date: "Jul. 2026", file: "https://aws.amazon.com/certification/certified-cloud-practitioner/", isExternal: true, tier: "featured", logo: "/aws_logo.png" },
   { name: "Oracle Cloud Infrastructure 2025 Certified AI Foundations", issuer: "Oracle University", date: "Mar. 2026", file: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate.pdf", tier: "featured" },
   { name: "Oracle Cloud Infrastructure 2025 Certified Foundations", issuer: "Oracle University", date: "Mar. 2026", file: "ORACLE.pdf", tier: "featured" },
   { name: "Oracle Data Platform 2025 Certified Foundations", issuer: "Oracle University", date: "Mar. 2026", file: "Oracle Data Platform 2025 Certified Foundations Associate.pdf", tier: "featured" },

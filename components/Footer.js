@@ -8,9 +8,9 @@ const Footer = () => {
   const navLinks = [
     { name: t('footer_home'), href: '#hero' },
     { name: t('nav_about'), href: '#about' },
+    { name: t('nav_experience'), href: '#experience' },
     { name: t('nav_projects'), href: '#projects' },
     { name: t('nav_skills'), href: '#skills' },
-    { name: t('nav_testimonials'), href: '#testimonials' },
     { name: t('nav_contact'), href: '#contact' },
   ]
 
@@ -22,7 +22,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="border-t" style={{ background: 'var(--bg-primary)', borderColor: 'var(--border-color)' }} role="contentinfo">
+    <footer className="border-t" style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }} role="contentinfo">
       <div className="container-max section-padding">
         <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8"
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>

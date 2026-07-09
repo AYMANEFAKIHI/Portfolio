@@ -16,7 +16,7 @@ const About = () => {
   }
 
   return (
-    <section className="section-padding" id="about" style={{ background: 'var(--bg-secondary)' }} aria-label="About me">
+    <section className="section-padding" id="about" style={{ background: 'var(--bg-primary)' }} aria-label="About me">
       <div className="container-max">
         <motion.h2
           className="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text"

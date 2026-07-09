@@ -32,7 +32,7 @@ export const projectsData = [
         },
         techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
         liveUrl: "https://connect.emsi.info",
-        githubUrl: "https://github.com/username/emsi-connect",
+        githubUrl: "https://github.com/AYMANEFAKIHI/emsi-connect",
         isPrivate: true,
     },
     {
@@ -197,6 +197,23 @@ export const projectsData = [
         techStack: ["React", "Vite", "Tailwind", "Supabase", "Groq AI", "Node.js"],
         liveUrl: "https://resume-cyan-pi.vercel.app/",
         githubUrl: "https://github.com/AYMANEFAKIHI/resume",
+        isPrivate: false,
+    },
+    {
+        id: 11,
+        title: "TIPE CPGE",
+        category: { en: "EdTech / Coaching Platform", fr: "EdTech / Plateforme de Coaching" },
+        image: "/project11.png",
+        summary: {
+            en: "A French-language coaching platform helping CPGE (French preparatory classes) students succeed in their TIPE research project, with experimental simulations, oral prep, and scientific mentoring.",
+            fr: "Une plateforme de coaching en français aidant les étudiants de CPGE à réussir leur TIPE, avec des simulations expérimentales, une préparation à l'oral et un accompagnement scientifique."
+        },
+        fullDescription: {
+            en: `**TIPE CPGE** is a coaching platform built to support French preparatory-class (CPGE) students through their TIPE — a mandatory personal research project that plays a major role in admission to top engineering schools (Grandes Écoles).\n\n**Problem & Goal:** TIPE season is high-stakes and time-constrained: students need to design an experimental setup, produce simulations, and defend their subject orally, often without structured guidance. The goal was to package that guidance into a self-serve platform.\n\n**Solution & Implementation:** Built with **React** and **Vite** for a fast, minimal SPA experience. The platform offers experimental simulation walkthroughs (physics/engineering models rendered with Python-style scientific tooling), an oral-defense preparation track, a "Guide TIPE" resource library, and yearly-specific content (e.g. CNC exam session). Positioned as an independent side project run alongside my engineering studies.\n\n**Results:** Has supported 200+ students preparing their TIPE, with a reported 95% success rate and students admitted to 50+ Grandes Écoles.`,
+            fr: `**TIPE CPGE** est une plateforme de coaching conçue pour accompagner les étudiants de classes préparatoires (CPGE) dans la réalisation de leur TIPE — un projet de recherche personnel obligatoire qui joue un rôle majeur dans l'admission aux Grandes Écoles.\n\n**Problème & Objectif:** La période du TIPE est exigeante et limitée dans le temps : les étudiants doivent concevoir un dispositif expérimental, produire des simulations et défendre leur sujet à l'oral, souvent sans accompagnement structuré. L'objectif était de regrouper cet accompagnement dans une plateforme en libre-service.\n\n**Solution & Mise en œuvre:** Développée avec **React** et **Vite** pour une expérience SPA rapide et minimaliste. La plateforme propose des simulations expérimentales guidées (modèles physiques/scientifiques), un parcours de préparation à l'oral, une bibliothèque de ressources "Guide TIPE" et du contenu spécifique par session (ex. CNC). Positionnée comme un projet indépendant mené en parallèle de mes études d'ingénieur.\n\n**Résultats:** A accompagné plus de 200 étudiants dans leur TIPE, avec un taux de réussite rapporté de 95% et des admissions dans plus de 50 Grandes Écoles.`
+        },
+        techStack: ["React", "Vite", "Tailwind CSS"],
+        liveUrl: "https://tipecpge.vercel.app/",
         isPrivate: false,
     }
 ];

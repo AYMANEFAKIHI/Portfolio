@@ -12,6 +12,9 @@ const skillCategories = {
     { name: 'Node.js', icon: '🟢' }, { name: 'Python', icon: '🐍' }, { name: 'MongoDB', icon: '🍃' },
     { name: 'PostgreSQL', icon: '🐘' }, { name: 'REST APIs', icon: '🔗' }, { name: 'GraphQL', icon: '◈' },
   ],
+  'Databases': [
+    { name: 'MySQL', icon: '🐬' }, { name: 'T-SQL (SQL Server)', icon: '🗄️' }, { name: 'PL/SQL (Oracle)', icon: '🧩' },
+  ],
   'DevOps & Cloud': [
     { name: 'Git', icon: '📦' }, { name: 'Docker', icon: '🐳' }, { name: 'AWS', icon: '☁️' },
     { name: 'Firebase', icon: '🔥' }, { name: 'Vercel', icon: '△' }, { name: 'Linux', icon: '🐧' },
@@ -60,7 +63,7 @@ const Skills = () => {
   const displayedCerts = showAllCerts ? certifications : featuredCerts
 
   return (
-    <section className="section-padding" id="skills" style={{ background: 'var(--bg-primary)' }} aria-label="Skills and technologies">
+    <section className="section-padding" id="skills" style={{ background: 'var(--bg-secondary)' }} aria-label="Skills and technologies">
       <div className="container-max">
         <motion.h2 className="text-4xl md:text-5xl font-bold mb-4 text-center gradient-text"
           initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>

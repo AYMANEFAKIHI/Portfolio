@@ -54,7 +54,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding" style={{ background: 'var(--bg-secondary)' }} aria-label="Contact">
+    <section id="contact" className="section-padding" style={{ background: 'var(--bg-primary)' }} aria-label="Contact">
       <div className="container-max">
         <motion.h2 className="text-4xl md:text-5xl font-bold mb-4 text-center gradient-text"
           initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>

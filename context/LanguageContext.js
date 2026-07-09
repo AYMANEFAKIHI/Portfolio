@@ -6,6 +6,7 @@ export const translations = {
   en: {
     // Navbar
     nav_about: 'About',
+    nav_experience: 'Experience',
     nav_projects: 'Projects',
     nav_skills: 'Skills',
     nav_testimonials: 'Testimonials',
@@ -28,6 +29,20 @@ export const translations = {
 
     // Education
     edu_title: 'My Education',
+
+    // Experience
+    exp_title: 'Experience',
+    exp_subtitle: 'Professional work and independent projects',
+
+    // GitHub Activity
+    github_title: 'GitHub Activity',
+    github_subtitle: 'Real contribution history, pulled live from GitHub',
+    github_loading: 'Loading activity...',
+    github_error: "Couldn't load activity right now — check the profile directly.",
+    github_view_profile: 'View GitHub profile',
+    github_contributions_in_year: 'contributions in the last year',
+    github_less: 'Less',
+    github_more: 'More',
 
     // Projects
     projects_subtitle: 'Real products built for real users',
@@ -113,6 +128,7 @@ export const translations = {
   fr: {
     // Navbar
     nav_about: 'À propos',
+    nav_experience: 'Expérience',
     nav_projects: 'Projets',
     nav_skills: 'Compétences',
     nav_testimonials: 'Témoignages',
@@ -135,6 +151,20 @@ export const translations = {
 
     // Education
     edu_title: 'Mon Parcours',
+
+    // Experience
+    exp_title: 'Expérience',
+    exp_subtitle: 'Expérience professionnelle et projets indépendants',
+
+    // GitHub Activity
+    github_title: 'Activité GitHub',
+    github_subtitle: 'Historique de contributions réel, récupéré en direct depuis GitHub',
+    github_loading: "Chargement de l'activité...",
+    github_error: "Impossible de charger l'activité pour le moment — consultez directement le profil.",
+    github_view_profile: 'Voir le profil GitHub',
+    github_contributions_in_year: 'contributions au cours de la dernière année',
+    github_less: 'Moins',
+    github_more: 'Plus',
 
     // Projects
     projects_subtitle: 'Des produits réels pour de vrais utilisateurs',

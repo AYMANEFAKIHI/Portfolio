@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aymanefakihi.dev/sitemap.xml
+Sitemap: https://portfolio-mu-ten-al9isz6c5k.vercel.app/sitemap.xml

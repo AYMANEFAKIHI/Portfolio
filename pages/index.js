@@ -3,9 +3,11 @@ import Head from 'next/head'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import EducationTimeline from '../components/EducationTimeline'
+import Experience from '../components/Experience'
+import GithubActivity from '../components/GithubActivity'
+import StatsBand from '../components/StatsBand'
 import ProjectList from '../components/ProjectList'
 import Skills from '../components/Skills'
-import Testimonials from '../components/Testimonials'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
@@ -29,6 +31,10 @@ export default function Home() {
 
       <Hero onAnimationComplete={() => setShowContent(true)} />
 
+      <div className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+        <StatsBand />
+      </div>
+
       <main
         id="main-content"
         className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}
@@ -41,14 +47,14 @@ export default function Home() {
           <EducationTimeline />
         </section>
 
+        <Experience />
+
         <ProjectList />
+
+        <GithubActivity />
 
         <section id="skills" aria-label="Technical skills">
           <Skills />
-        </section>
-
-        <section id="testimonials" aria-label="Testimonials">
-          <Testimonials />
         </section>
 
         <section id="contact" aria-label="Contact form">

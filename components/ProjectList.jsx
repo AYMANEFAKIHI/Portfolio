@@ -10,7 +10,7 @@ const ProjectList = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="py-24" style={{ background: 'var(--bg-primary)' }} aria-label="Projects">
+    <section id="projects" className="py-24" style={{ background: 'var(--bg-secondary)' }} aria-label="Projects">
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-4"

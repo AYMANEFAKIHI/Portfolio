@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import { useCommandPalette } from '../context/CommandPaletteContext';
 
 const SunIcon = () => (
   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,6 +27,7 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const { theme, toggleTheme } = useTheme();
   const { lang, toggleLang, t } = useLanguage();
+  const { open: openCommandPalette } = useCommandPalette();
   const router = useRouter();
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ['hero', 'about', 'education', 'projects', 'skills', 'testimonials', 'contact'];
+    const sections = ['hero', 'about', 'education', 'experience', 'projects', 'github-activity', 'skills', 'contact'];
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) setActiveSection(e.target.id); }),
       { rootMargin: '-40% 0px -55% 0px' }
@@ -59,9 +61,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('nav_about'), href: '#about' },
+    { name: t('nav_experience'), href: '#experience' },
     { name: t('nav_projects'), href: '#projects' },
     { name: t('nav_skills'), href: '#skills' },
-    { name: t('nav_testimonials'), href: '#testimonials' },
     { name: t('nav_contact'), href: '#contact' },
   ];
 
@@ -119,6 +121,20 @@ const Navbar = () => {
           {/* Divider */}
           <div className="w-px h-5 mx-2" style={{ background: 'var(--border-color)' }} />
 
+          {/* Command palette trigger */}
+          <button
+            onClick={openCommandPalette}
+            title="Search (Ctrl/Cmd+K)"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm transition-all duration-300 border"
+            style={{ borderColor: 'var(--border-color)', color: 'var(--text-muted)', background: 'transparent' }}
+            aria-label="Open command palette"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+            </svg>
+            <kbd className="text-[10px] font-mono opacity-70">⌘K</kbd>
+          </button>
+
           {/* Language toggle */}
           <button
             onClick={toggleLang}
@@ -166,6 +182,16 @@ const Navbar = () => {
 
         {/* Mobile controls */}
         <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={openCommandPalette}
+            className="w-8 h-8 flex items-center justify-center rounded border transition-all"
+            style={{ borderColor: 'var(--border-color)', color: 'var(--text-secondary)' }}
+            aria-label="Open command palette"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+            </svg>
+          </button>
           <button
             onClick={toggleLang}
             className="text-xs font-bold px-2 py-1 rounded border transition-all"

@@ -134,7 +134,12 @@
   .container-max { @apply max-w-7xl mx-auto; }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-[#14b8a6] to-[#3b82f6] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#14b8a6] to-[#3b82f6] bg-clip-text;
+    /* Solid fallback color so Chrome's LCP heuristic (which checks the
+       computed `color`, not -webkit-text-fill-color) still treats this
+       text as valid paintable content instead of excluding it as invisible. */
+    color: #14b8a6;
+    -webkit-text-fill-color: transparent;
   }
 
   .theme-card {

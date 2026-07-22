@@ -59,7 +59,10 @@ const Hero = ({ onAnimationComplete }) => {
                           transition-all duration-500 ease-out`}
             >
               {t('hero_title')}{' '}
-              <span className="bg-gradient-to-r from-[#14b8a6] to-[#3b82f6] bg-clip-text text-transparent">
+              <span
+                className="bg-gradient-to-r from-[#14b8a6] to-[#3b82f6] bg-clip-text"
+                style={{ color: '#14b8a6', WebkitTextFillColor: 'transparent' }}
+              >
                 AYMANE FAKIHI
               </span>
             </h1>

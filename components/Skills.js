@@ -1,27 +1,52 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import {
+  SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5,
+  SiNodedotjs, SiPython, SiMongodb, SiPostgresql, SiGraphql, SiMysql,
+  SiGit, SiDocker, SiFirebase, SiVercel, SiLinux, SiJest, SiCypress,
+  SiFigma, SiRedis, SiSocketdotio,
+} from 'react-icons/si'
+import { TbApi, TbSql, TbBrandAdobeXd } from 'react-icons/tb'
 import CertificationsGrid from './CertificationsGrid'
 import { useLanguage } from '../context/LanguageContext'
 
 const skillCategories = {
   'Frontend': [
-    { name: 'JavaScript', icon: '⚡' }, { name: 'React', icon: '⚛️' }, { name: 'Next.js', icon: '▲' },
-    { name: 'TypeScript', icon: '🔷' }, { name: 'Tailwind CSS', icon: '🎨' }, { name: 'HTML5', icon: '🌐' },
+    { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
+    { name: 'React', Icon: SiReact, color: '#61DAFB' },
+    { name: 'Next.js', Icon: SiNextdotjs, color: 'currentColor' },
+    { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
+    { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
+    { name: 'HTML5', Icon: SiHtml5, color: '#E34F26' },
   ],
   'Backend': [
-    { name: 'Node.js', icon: '🟢' }, { name: 'Python', icon: '🐍' }, { name: 'MongoDB', icon: '🍃' },
-    { name: 'PostgreSQL', icon: '🐘' }, { name: 'REST APIs', icon: '🔗' }, { name: 'GraphQL', icon: '◈' },
+    { name: 'Node.js', Icon: SiNodedotjs, color: '#339933' },
+    { name: 'Python', Icon: SiPython, color: '#3776AB' },
+    { name: 'MongoDB', Icon: SiMongodb, color: '#47A248' },
+    { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4169E1' },
+    { name: 'REST APIs', Icon: TbApi, color: '#14b8a6' },
+    { name: 'GraphQL', Icon: SiGraphql, color: '#E10098' },
   ],
   'Databases': [
-    { name: 'MySQL', icon: '🐬' }, { name: 'T-SQL (SQL Server)', icon: '🗄️' }, { name: 'PL/SQL (Oracle)', icon: '🧩' },
+    { name: 'MySQL', Icon: SiMysql, color: '#4479A1' },
+    { name: 'T-SQL (SQL Server)', Icon: TbSql, color: '#CC2927' },
+    { name: 'PL/SQL (Oracle)', image: '/oracle.png' },
   ],
   'DevOps & Cloud': [
-    { name: 'Git', icon: '📦' }, { name: 'Docker', icon: '🐳' }, { name: 'AWS', icon: '☁️' },
-    { name: 'Firebase', icon: '🔥' }, { name: 'Vercel', icon: '△' }, { name: 'Linux', icon: '🐧' },
+    { name: 'Git', Icon: SiGit, color: '#F05032' },
+    { name: 'Docker', Icon: SiDocker, color: '#2496ED' },
+    { name: 'AWS', image: '/aws_logo.png' },
+    { name: 'Firebase', Icon: SiFirebase, color: '#FFCA28' },
+    { name: 'Vercel', Icon: SiVercel, color: 'currentColor' },
+    { name: 'Linux', Icon: SiLinux, color: '#FCC624' },
   ],
   'Testing & Tools': [
-    { name: 'Jest', icon: '🃏' }, { name: 'Cypress', icon: '🌲' }, { name: 'Figma', icon: '🎭' },
-    { name: 'Adobe XD', icon: '🎨' }, { name: 'Redis', icon: '🔴' }, { name: 'Socket.io', icon: '🔌' },
+    { name: 'Jest', Icon: SiJest, color: '#C21325' },
+    { name: 'Cypress', Icon: SiCypress, color: '#69D3A7' },
+    { name: 'Figma', Icon: SiFigma, color: '#F24E1E' },
+    { name: 'Adobe XD', Icon: TbBrandAdobeXd, color: '#FF26BE' },
+    { name: 'Redis', Icon: SiRedis, color: '#DC382D' },
+    { name: 'Socket.io', Icon: SiSocketdotio, color: 'currentColor' },
   ],
 }
 
@@ -96,7 +121,11 @@ const Skills = () => {
                     viewport={{ once: true }}
                     whileHover={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}
                   >
-                    <span className="text-xs" role="img" aria-hidden="true">{skill.icon}</span>
+                    {skill.image ? (
+                      <img src={skill.image} alt="" aria-hidden="true" className="w-4 h-4 object-contain flex-shrink-0" />
+                    ) : (
+                      <skill.Icon aria-hidden="true" className="w-4 h-4 flex-shrink-0" style={{ color: skill.color }} />
+                    )}
                     {skill.name}
                   </motion.span>
                 ))}

@@ -21,7 +21,10 @@ const ProjectList = () => {
           transition={{ duration: 0.6 }}
         >
           {lang === 'fr' ? 'Mes ' : 'My '}
-          <span className="bg-gradient-to-r from-[#14b8a6] to-[#3b82f6] bg-clip-text text-transparent">
+          <span
+            className="bg-gradient-to-r from-[#14b8a6] to-[#3b82f6] bg-clip-text"
+            style={{ color: '#14b8a6', WebkitTextFillColor: 'transparent' }}
+          >
             {lang === 'fr' ? 'Projets' : 'Projects'}
           </span>
         </motion.h2>

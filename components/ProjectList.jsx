@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import ProjectModal from './ProjectModal';
@@ -58,11 +59,14 @@ const ProjectList = () => {
                 {/* Image */}
                 <div className={`w-full md:w-1/2 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
                   <div className="relative overflow-hidden rounded-2xl border group" style={{ borderColor: 'var(--border-color)' }}>
-                    <img
+                    <Image
                       src={project.image}
                       alt={`${project.title} screenshot`}
-                      className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
+                      width={project.imageWidth}
+                      height={project.imageHeight}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                      priority={index === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                       <div className="flex gap-3">

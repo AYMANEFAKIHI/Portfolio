@@ -4,6 +4,8 @@ export const projectsData = [
         title: "EMSI Central Portal",
         category: { en: "Academic Platform", fr: "Plateforme Académique" },
         image: "/project1.png",
+        imageWidth: 1894,
+        imageHeight: 878,
         summary: {
             en: "The central digital gateway for the EMSI ecosystem, aggregating news, schedules, and institutional announcements for thousands of students.",
             fr: "La passerelle numérique centrale de l'écosystème EMSI, agrégeant actualités, emplois du temps et annonces institutionnelles pour des milliers d'étudiants."
@@ -22,6 +24,8 @@ export const projectsData = [
         title: "EMSI Connect",
         category: { en: "Social Networking", fr: "Réseau Social" },
         image: "/project2.png",
+        imageWidth: 1919,
+        imageHeight: 882,
         summary: {
             en: "A dedicated social and professional networking platform connecting current students with alumni, featuring real-time messaging and event management.",
             fr: "Une plateforme de réseau social et professionnel dédiée, reliant les étudiants actuels aux anciens, avec messagerie en temps réel et gestion d'événements."
@@ -40,6 +44,8 @@ export const projectsData = [
         title: "EMSI StudyHub",
         category: { en: "EMSI-Learning / LMS", fr: "LMS / Apprentissage" },
         image: "/project3.png",
+        imageWidth: 1919,
+        imageHeight: 870,
         summary: {
             en: "A comprehensive academic resource repository allowing students to access course materials and share notes. Optimized for performance during high-traffic exam periods.",
             fr: "Un référentiel académique complet permettant aux étudiants d'accéder aux supports de cours et de partager des notes. Optimisé pour les périodes d'examen à fort trafic."
@@ -58,6 +64,8 @@ export const projectsData = [
         title: "EMSI-Delegation System",
         category: { en: "Management Tool", fr: "Outil de Gestion" },
         image: "/project4.png",
+        imageWidth: 1919,
+        imageHeight: 870,
         summary: {
             en: "An administrative tool streamlining the operations of student representatives (délégués). Facilitates secure voting and feedback collection.",
             fr: "Un outil administratif optimisant les opérations des représentants étudiants (délégués). Facilite le vote sécurisé et la collecte de retours."
@@ -76,6 +84,8 @@ export const projectsData = [
         title: "Solar System Explorer",
         category: { en: "3D Visualisation & Data", fr: "Visualisation 3D & Données" },
         image: "/project5.png",
+        imageWidth: 1915,
+        imageHeight: 1079,
         summary: {
             en: "An interactive web application rendering a scaled model of the solar system, demonstrating complex physics concepts using pure JavaScript.",
             fr: "Une application web interactive rendant un modèle à l'échelle du système solaire, illustrant des concepts physiques complexes en JavaScript pur."
@@ -94,6 +104,8 @@ export const projectsData = [
         title: "Offline Chatbot & Rule Editor",
         category: { en: "Front-end Fundamentals & Logic", fr: "Fondamentaux Front-end & Logique" },
         image: "/project6.png",
+        imageWidth: 1477,
+        imageHeight: 818,
         summary: {
             en: "A standalone, offline-capable chatbot featuring a custom rule editor. Demonstrates strong command of vanilla JavaScript logic and JSON data handling.",
             fr: "Un chatbot autonome fonctionnant hors ligne avec un éditeur de règles personnalisé. Démontre une maîtrise solide de la logique JavaScript et du traitement JSON."
@@ -112,6 +124,8 @@ export const projectsData = [
         title: "WebSlide Generator",
         category: { en: "Declarative UI & Export Tooling", fr: "UI Déclarative & Export" },
         image: "/project7.png",
+        imageWidth: 1889,
+        imageHeight: 773,
         summary: {
             en: "A developer-centric tool for creating responsive HTML/CSS presentations from declarative templates, supporting PDF and ZIP export.",
             fr: "Un outil orienté développeur pour créer des présentations HTML/CSS responsives à partir de templates déclaratifs, avec export PDF et ZIP."
@@ -130,6 +144,8 @@ export const projectsData = [
         title: "The Arduino Student Lab",
         category: { en: "Technical Education / IoT", fr: "Éducation Technique / IoT" },
         image: "/project8.png",
+        imageWidth: 1755,
+        imageHeight: 854,
         summary: {
             en: "An educational platform providing clear, project-based tutorials for mastering Arduino programming, focusing on electronics and physical computing.",
             fr: "Une plateforme éducative proposant des tutoriels clairs et basés sur des projets pour maîtriser la programmation Arduino, axée sur l'électronique et l'informatique physique."
@@ -148,6 +164,8 @@ export const projectsData = [
         title: "ExamBuilder",
         category: { en: "AI-Powered EdTech", fr: "EdTech propulsée par l'IA" },
         image: "/project9.png",
+        imageWidth: 1898,
+        imageHeight: 879,
         summary: {
             en: "An intelligent platform powered by Google Gemini AI that allows educators to generate professional, formatted exams in seconds with instant PDF export.",
             fr: "Une plateforme intelligente propulsée par Google Gemini AI permettant aux enseignants de générer des examens professionnels et formatés en quelques secondes avec export PDF instantané."
@@ -166,6 +184,8 @@ export const projectsData = [
         title: "InternIQ",
         category: { en: "AI-Powered JobTech / SaaS", fr: "JobTech IA / SaaS" },
         image: "/project10.png",
+        imageWidth: 1919,
+        imageHeight: 871,
         summary: {
             en: "A specialized AI platform for Moroccan students that automates internship hunting by scraping local job boards, scoring CV matches, and generating tailored cover letters.",
             fr: "Une plateforme IA spécialisée pour les étudiants marocains qui automatise la recherche de stages en scrappant les job boards locaux, en notant les correspondances de CV et en générant des lettres de motivation personnalisées."
@@ -204,6 +224,8 @@ export const projectsData = [
         title: "TIPE CPGE",
         category: { en: "EdTech / Coaching Platform", fr: "EdTech / Plateforme de Coaching" },
         image: "/project11.png",
+        imageWidth: 1893,
+        imageHeight: 823,
         summary: {
             en: "A French-language coaching platform helping CPGE (French preparatory classes) students succeed in their TIPE research project, with experimental simulations, oral prep, and scientific mentoring.",
             fr: "Une plateforme de coaching en français aidant les étudiants de CPGE à réussir leur TIPE, avec des simulations expérimentales, une préparation à l'oral et un accompagnement scientifique."

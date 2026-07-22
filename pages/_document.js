@@ -5,6 +5,12 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* Applies the saved theme class before first paint, so there's no flash of the wrong theme */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';var r=document.documentElement;if(t==='light'){r.classList.add('light');r.classList.remove('dark');}else{r.classList.add('dark');r.classList.remove('light');}}catch(e){}})();`,
+            }}
+          />
           <link rel="icon" href="/favicon.ico" />
           <link rel="icon" type="image/png" href="/favicon.png" />
           <link rel="apple-touch-icon" href="/favicon.png" />

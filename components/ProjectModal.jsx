@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 
 const ProjectModal = ({ project, onClose }) => {
@@ -41,7 +42,14 @@ const ProjectModal = ({ project, onClose }) => {
 
         {/* Body */}
         <div className="p-6">
-          <img src={project.image} alt={project.title} className="w-full rounded-lg mb-6 shadow-xl" />
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={project.imageWidth}
+            height={project.imageHeight}
+            sizes="(max-width: 896px) 100vw, 896px"
+            className="w-full h-auto rounded-lg mb-6 shadow-xl"
+          />
 
           <p
             className="leading-relaxed mb-8"

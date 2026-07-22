@@ -1,18 +1,14 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useLayoutEffect, useState } from 'react'
 
 const ThemeContext = createContext({ theme: 'dark', toggleTheme: () => {} })
 
 export function ThemeProvider({ children }) {
+  // Start at 'dark' to match the server-rendered markup exactly (avoids a
+  // hydration mismatch). The inline script in _document.js already applied
+  // the real saved theme class to <html> before first paint for CSS purposes;
+  // this layout effect corrects the React state to match before the browser
+  // paints, so nothing ever visibly flashes.
   const [theme, setTheme] = useState('dark')
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    const saved = localStorage.getItem('theme') || 'dark'
-    setTheme(saved)
-    // Apply to BOTH html and body so all CSS vars cascade correctly
-    applyTheme(saved)
-    setMounted(true)
-  }, [])
 
   const applyTheme = (t) => {
     const html = document.documentElement
@@ -30,15 +26,19 @@ export function ThemeProvider({ children }) {
     }
   }
 
+  useLayoutEffect(() => {
+    const saved = localStorage.getItem('theme') || 'dark'
+    if (saved !== theme) setTheme(saved)
+    applyTheme(saved)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
     localStorage.setItem('theme', next)
     applyTheme(next)
   }
-
-  // Prevent flash — render children only after theme is read from localStorage
-  if (!mounted) return <div style={{ visibility: 'hidden' }}>{children}</div>
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

@@ -19,9 +19,9 @@ const MatrixBackground = () => {
     const characters = binary.split('');
 
     const fontSize = 16;
-    const columns = Math.floor(width / fontSize);
+    let columns = Math.floor(width / fontSize);
 
-    const drops = [];
+    let drops = [];
     for (let x = 0; x < columns; x++) {
       drops[x] = 1;
     }
@@ -44,19 +44,52 @@ const MatrixBackground = () => {
       }
     };
 
-    const interval = setInterval(draw, 33);
+    let interval = null;
+    const start = () => {
+      if (interval) return;
+      interval = setInterval(draw, 33);
+    };
+    const stop = () => {
+      if (!interval) return;
+      clearInterval(interval);
+      interval = null;
+    };
+
+    // Only animate while the canvas is actually visible on screen and the
+    // tab is in the foreground — this was previously running continuously
+    // (every 33ms, forever) even when scrolled far off-screen or backgrounded.
+    let isOnScreen = false;
+    const syncAnimation = () => {
+      if (isOnScreen && !document.hidden) start();
+      else stop();
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isOnScreen = entry.isIntersecting;
+        syncAnimation();
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
+    document.addEventListener('visibilitychange', syncAnimation);
 
     const handleResize = () => {
       width = parent.offsetWidth;
       height = parent.offsetHeight;
       canvas.width = width;
       canvas.height = height;
+      columns = Math.floor(width / fontSize);
+      drops = Array.from({ length: columns }, () => 1);
     };
 
     window.addEventListener('resize', handleResize);
 
     return () => {
-      clearInterval(interval);
+      stop();
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', syncAnimation);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -64,6 +97,7 @@ const MatrixBackground = () => {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       className="absolute inset-0 w-full h-full z-0"
     />
   );

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /tiktok-callback
 
 Sitemap: https://portfolio-mu-ten-al9isz6c5k.vercel.app/sitemap.xml

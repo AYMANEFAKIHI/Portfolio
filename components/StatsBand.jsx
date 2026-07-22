@@ -38,12 +38,12 @@ const useCountUp = (target, active) => {
   return value;
 };
 
-const StatCard = ({ value, suffix = '', label, active }) => {
+const StatCard = ({ value, suffix = '', label, active, loading }) => {
   const count = useCountUp(value, active);
   return (
     <div className="flex flex-col items-center gap-1 px-4 py-2">
       <span className="text-3xl md:text-4xl font-extrabold gradient-text tabular-nums">
-        {count}{suffix}
+        {loading ? '–' : `${count}${suffix}`}
       </span>
       <span className="text-xs md:text-sm text-center" style={{ color: 'var(--text-muted)' }}>
         {label}
@@ -68,9 +68,7 @@ const StatsBand = () => {
     { value: projectsData.length, label: lang === 'fr' ? 'Projets livrés' : 'Projects shipped' },
     { value: CERTIFICATIONS_COUNT, label: lang === 'fr' ? 'Certifications' : 'Certifications' },
     { value: YEARS_CODING, suffix: '+', label: lang === 'fr' ? "Ans de code pratique" : 'Years hands-on coding' },
-    ...(githubTotal != null
-      ? [{ value: githubTotal, label: lang === 'fr' ? 'Contributions GitHub (an)' : 'GitHub contributions (yr)' }]
-      : []),
+    { value: githubTotal ?? 0, loading: githubTotal == null, label: lang === 'fr' ? 'Contributions GitHub (an)' : 'GitHub contributions (yr)' },
   ];
 
   return (
@@ -79,7 +77,7 @@ const StatsBand = () => {
         {stats.map((s, i) => (
           <div key={i} className="flex items-center">
             {i > 0 && <span className="hidden sm:block w-px h-10 mr-2 md:mr-4" style={{ background: 'var(--border-color)' }} />}
-            <StatCard value={s.value} suffix={s.suffix} label={s.label} active={inView} />
+            <StatCard value={s.value} suffix={s.suffix} label={s.label} active={inView} loading={s.loading} />
           </div>
         ))}
       </div>

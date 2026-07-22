@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -12,8 +11,6 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 export default function Home() {
-  const [showContent, setShowContent] = useState(false)
-
   return (
     <div className="min-h-screen bg-black text-white">
       <Head>
@@ -29,16 +26,11 @@ export default function Home() {
         Skip to main content
       </a>
 
-      <Hero onAnimationComplete={() => setShowContent(true)} />
+      <Hero />
 
-      <div className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
-        <StatsBand />
-      </div>
+      <StatsBand />
 
-      <main
-        id="main-content"
-        className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}
-      >
+      <main id="main-content">
         <section id="about" aria-label="About Aymane Fakihi">
           <About />
         </section>
@@ -62,9 +54,7 @@ export default function Home() {
         </section>
       </main>
 
-      <div className={`transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }

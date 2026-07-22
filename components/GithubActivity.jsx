@@ -50,7 +50,7 @@ const GithubActivity = () => {
         </motion.p>
 
         <motion.div
-          className="max-w-3xl mx-auto p-6 md:p-8 rounded-2xl border"
+          className="max-w-3xl mx-auto p-6 md:p-8 rounded-2xl border min-h-[280px]"
           style={{ background: 'var(--bg-card)', borderColor: 'var(--border-color)' }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const GithubActivity = () => {
           viewport={{ once: true }}
         >
           {state.status === 'loading' && (
-            <div className="h-32 flex items-center justify-center">
+            <div className="h-[232px] flex items-center justify-center">
               <span className="text-sm animate-pulse" style={{ color: 'var(--text-muted)' }}>
                 {t('github_loading')}
               </span>
@@ -66,7 +66,7 @@ const GithubActivity = () => {
           )}
 
           {state.status === 'error' && (
-            <div className="h-32 flex flex-col items-center justify-center gap-3 text-center">
+            <div className="h-[232px] flex flex-col items-center justify-center gap-3 text-center">
               <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{t('github_error')}</p>
               <a
                 href="https://github.com/AYMANEFAKIHI"

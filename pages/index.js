@@ -4,7 +4,6 @@ import About from '../components/About'
 import EducationTimeline from '../components/EducationTimeline'
 import Experience from '../components/Experience'
 import GithubActivity from '../components/GithubActivity'
-import StatsBand from '../components/StatsBand'
 import ProjectList from '../components/ProjectList'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
@@ -27,8 +26,6 @@ export default function Home() {
       </a>
 
       <Hero />
-
-      <StatsBand />
 
       <main id="main-content">
         <section id="about" aria-label="About Aymane Fakihi">

@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '../context/LanguageContext';
 import { projectsData } from '../data/projectsData';
 
@@ -59,14 +58,15 @@ const StatCard = ({ count, suffix = '', label, loading }) => {
 
 const StatsBand = () => {
   const { t, lang } = useLanguage();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
   const [githubTotal, setGithubTotal] = useState(null);
+  const [ghLoaded, setGhLoaded] = useState(false);
 
   useEffect(() => {
     fetch('/api/github-contributions')
       .then((res) => res.json())
       .then((data) => { if (data.ok) setGithubTotal(data.total); })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setGhLoaded(true));
   }, []);
 
   const stats = [
@@ -76,10 +76,10 @@ const StatsBand = () => {
     { value: githubTotal ?? 0, loading: githubTotal == null, label: lang === 'fr' ? 'Contributions GitHub (an)' : 'GitHub contributions (yr)' },
   ];
 
-  const counts = useCountUpAll(stats.map((s) => s.value), inView);
+  const counts = useCountUpAll(stats.map((s) => s.value), ghLoaded);
 
   return (
-    <div ref={ref} className="border-y" style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+    <div className="border-y" style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
       <div className="container-max py-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-4 md:gap-x-4">
         {stats.map((s, i) => (
           <div key={i} className="flex items-center">

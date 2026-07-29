@@ -15,9 +15,9 @@ export const projectsData = [
             fr: `**Le Portail Central** constitue le hub numérique principal de l'ensemble de l'écosystème EMSI, au service de milliers d'étudiants et de membres du corps enseignant sur plusieurs campus.\n\n**Problème & Objectif:** L'établissement manquait d'une source unique et unifiée d'informations académiques en temps réel, ce qui entraînait une communication fragmentée entre les départements et des annonces papier obsolètes. L'objectif était de centraliser actualités, emplois du temps et communications administratives en une seule plateforme réactive et hautement disponible.\n\n**Solution & Mise en œuvre:** Développé avec un frontend **Next.js** pour un rendu rapide et un bon référencement SEO, la plateforme consomme des données via une **API REST** sécurisée. L'architecture est conçue pour la **scalabilité**, garantissant la gestion de volumes de trafic élevés, notamment lors des périodes critiques comme les inscriptions et la publication des résultats d'examens.\n\n**Résultats:** A significativement amélioré la transparence institutionnelle et réduit la charge administrative en automatisant la diffusion des informations académiques et réglementaires essentielles. Cette plateforme est désormais le premier point de contact des étudiants pour les mises à jour officielles.`
         },
         techStack: ["Next.js", "Tailwind CSS", "REST API"],
-        liveUrl: "https://emsi.info",
-        githubUrl: "https://github.com/aymanefakihi/emsi-central-portal",
-        isPrivate: true,
+        liveUrl: "https://aymanefakihi.github.io/info/",
+        githubUrl: "https://github.com/AYMANEFAKIHI/info",
+        isPrivate: false,
     },
     {
         id: 2,
@@ -35,9 +35,9 @@ export const projectsData = [
             fr: `**EMSI Connect** est une plateforme de réseau social et professionnel dédiée, conçue pour combler le fossé entre les étudiants actuels et le vaste réseau des anciens élèves.\n\n**Problème & Objectif:** Les étudiants avaient besoin d'un outil de networking formel et orienté carrière, distinct des réseaux sociaux classiques. L'objectif était de favoriser le mentorat professionnel, l'orientation de carrière et la création de communauté.\n\n**Solution & Mise en œuvre:** Application complète en **stack MERN** utilisant **Node.js** et **MongoDB** pour un stockage de données flexible en backend. Le défi technique principal était l'implémentation de la **communication en temps réel**, réalisée avec **Socket.io** pour la messagerie instantanée et les mises à jour d'événements en direct. La plateforme propose des annuaires d'utilisateurs, la gestion d'événements et la création de groupes.\n\n**Résultats:** A facilité des connexions professionnelles, augmenté la participation aux événements et établi un environnement privé et sécurisé pour le mentorat des anciens élèves et les offres d'emploi.`
         },
         techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
-        liveUrl: "https://connect.emsi.info",
-        githubUrl: "https://github.com/AYMANEFAKIHI/emsi-connect",
-        isPrivate: true,
+        liveUrl: "https://aymanefakihi.github.io/connect/",
+        githubUrl: "https://github.com/AYMANEFAKIHI/connect",
+        isPrivate: false,
     },
     {
         id: 3,
@@ -55,9 +55,9 @@ export const projectsData = [
             fr: `**StudyHub** est un système de gestion de l'apprentissage (LMS) complet et un référentiel de ressources académiques, optimisé pour le trafic élevé et la fiabilité.\n\n**Problème & Objectif:** Les étudiants avaient besoin d'un espace centralisé et fiable pour accéder aux supports de cours et les partager. Les méthodes de partage de fichiers existantes étaient lentes et désorganisées, surtout pendant les périodes de forte demande comme les examens finaux.\n\n**Solution & Mise en œuvre:** Développé avec **Next.js** et **TypeScript** pour un code robuste et sécurisé, le système utilise **PostgreSQL** pour le stockage structuré des métadonnées et **AWS S3** pour le stockage et la livraison sécurisés et rapides des supports de cours volumineux. La stratégie de déploiement et de mise en cache a été spécifiquement optimisée pour maintenir les performances sous charge maximale.\n\n**Résultats:** A fourni une expérience d'accès aux ressources significativement plus rapide et plus fiable, permettant à des milliers d'étudiants de préparer efficacement leurs examens sans interruption de service.`
         },
         techStack: ["Next.js", "TypeScript", "PostgreSQL", "AWS S3"],
-        liveUrl: "https://studyhub.emsi.info",
-        githubUrl: "https://github.com/aymanefakihi/studyhub",
-        isPrivate: true,
+        liveUrl: "https://aymanefakihi.github.io/studyhub/",
+        githubUrl: "https://github.com/AYMANEFAKIHI/studyhub",
+        isPrivate: false,
     },
     {
         id: 4,
@@ -75,9 +75,9 @@ export const projectsData = [
             fr: `Le **Système E-Délégation** est un outil administratif essentiel conçu pour optimiser la représentation étudiante et les processus administratifs.\n\n**Problème & Objectif:** Le processus d'élection des représentants étudiants (délégués), de collecte des retours et de communication avec l'administration était manuel et inefficace. L'objectif était de numériser et de formaliser ces opérations administratives.\n\n**Solution & Mise en œuvre:** Développé avec la **stack MERN** (MongoDB, Express, React, Node) et **Redux** pour une gestion d'état prévisible. L'**authentification JWT** garantit un vote sécurisé et vérifiable avec un contrôle d'accès basé sur les rôles. Les fonctionnalités incluent des mécanismes de vote sécurisés, des formulaires de collecte de retours automatisés et des canaux de communication spécialisés.\n\n**Résultats:** A réduit la charge administrative manuelle, assuré la transparence et l'intégrité des élections étudiantes, et fourni une méthode structurée pour collecter des retours exploitables.`
         },
         techStack: ["MERN Stack", "Redux", "JWT Auth"],
-        liveUrl: "https://delegation.emsi.info",
-        githubUrl: "https://github.com/aymanefakihi/e-delegation-system",
-        isPrivate: true,
+        liveUrl: "https://aymanefakihi.github.io/delgation/",
+        githubUrl: "https://github.com/aymanefakihi/delegation",
+        isPrivate: false,
     },
     {
         id: 5,
